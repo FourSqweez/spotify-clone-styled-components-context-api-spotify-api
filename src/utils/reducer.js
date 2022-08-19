@@ -5,11 +5,12 @@ export const initialState = {
 }
 
 const reducer = (state, action) => {
+	console.log('Action Type : ', action.type)
 	switch (action.type) {
 		case reducerCases.SET_TOKEN: {
 			return {
 				...state,
-				token: action.token,
+				token: action.payload,
 			}
 		}
 		default:
