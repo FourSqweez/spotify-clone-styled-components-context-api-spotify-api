@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import Login from './components/Login'
+import Spotify from './components/Spotify'
 import { reducerCases } from './utils/Contants'
 import { useStateProvider } from './utils/StateProvider'
 
@@ -13,9 +14,5 @@ export default function App() {
 			dispatch({ type: reducerCases.SET_TOKEN, payload: token })
 		}
 	}, [token, dispatch])
-	return (
-		<div>
-			<Login />
-		</div>
-	)
+	return <div>{token ? <Spotify /> : <Login />}</div>
 }
